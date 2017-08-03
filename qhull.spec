@@ -4,7 +4,7 @@
 Summary: General dimension convex hull programs
 Name: qhull
 Version: 2015.2
-Release: 3%{?dist}
+Release: 4%{?dist}
 License: Qhull
 Source0: http://www.qhull.org/download/qhull-%{tarvers}.tgz
 
@@ -117,6 +117,9 @@ chrpath --delete ${RPM_BUILD_ROOT}%{_libdir}/lib*.so.*
 
 
 %changelog
+* Thu Aug 03 2017 Fedora Release Engineering <releng@fedoraproject.org> - 2015.2-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Binutils_Mass_Rebuild
+
 * Thu Jul 27 2017 Fedora Release Engineering <releng@fedoraproject.org> - 2015.2-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild
 
