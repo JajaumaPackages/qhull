@@ -4,7 +4,7 @@
 Summary: General dimension convex hull programs
 Name: qhull
 Version: 2015.2
-Release: 4%{?dist}
+Release: 5%{?dist}
 License: Qhull
 Source0: http://www.qhull.org/download/qhull-%{tarvers}.tgz
 
@@ -75,10 +75,10 @@ chrpath --delete ${RPM_BUILD_ROOT}%{_libdir}/lib*.so.*
 
 
 %files
-%{_pkgdocdir}
-%exclude %{_pkgdocdir}/COPYING.txt
-%exclude %{_pkgdocdir}/src/libqhull
-%exclude %{_pkgdocdir}/src/libqhull_r
+%{_docdir}/%{name}
+%exclude %{_docdir}/%{name}/COPYING.txt
+%exclude %{_docdir}/%{name}/src/libqhull
+%exclude %{_docdir}/%{name}/src/libqhull_r
 %license COPYING.txt
 %{_bindir}/*
 %{_mandir}/man1/*
@@ -108,8 +108,8 @@ chrpath --delete ${RPM_BUILD_ROOT}%{_libdir}/lib*.so.*
 
 
 %files devel
-%{_pkgdocdir}/src/libqhull
-%{_pkgdocdir}/src/libqhull_r
+%{_docdir}/%{name}/src/libqhull
+%{_docdir}/%{name}/src/libqhull_r
 %{_libdir}/*.so
 %{_includedir}/*
 %{_libdir}/libqhullcpp.a
@@ -117,6 +117,9 @@ chrpath --delete ${RPM_BUILD_ROOT}%{_libdir}/lib*.so.*
 
 
 %changelog
+* Fri Feb 09 2018 Jajauma's Packages <jajauma@yandex.ru> - 2015.2-5
+- Don't use broken _pkgdocdir macro
+
 * Thu Aug 03 2017 Fedora Release Engineering <releng@fedoraproject.org> - 2015.2-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Binutils_Mass_Rebuild
 
